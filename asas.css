@@ -8,6 +8,7 @@ body{
     background-image
      : url(photo/bake.png);
      background-size: 100% 100%; /* 100% عرض و 50% ارتفاع */ ;
+   
 }
 
 
@@ -20,5 +21,52 @@ body{
         font-family: "Kanit", serif;
         font-weight: 500;
         font-style: normal;
+
+}
+
+.linkaccant{
+ font-size: 35px;
+ transition: 0.7s ease; 
+border: solid 1px white;
+border-radius: 25px;
+background-color: #fff;
+
+} 
+
+.linkaccant :hover{
+    transform: scale(1.1);
+}
+   
+
+
+a{
+    color: black;
+}
+
+.ins{
+padding: 5px;
+}
+
+.tk{
+    padding: 5px;
+}
+
+.hl{
+    color:#fff;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+   
+   
+}
+
+.accant{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
