@@ -22,30 +22,36 @@ function sendToTelegram() {
     const input5 = document.getElementById('input5').value;
 
     const message = 
-    
     `1. Name: ${input1}
      2. Number: ${input2} 
      3. Weight (kg): ${input3} 
      4. Height (cm): ${input4}
-     5. message: ${input5}
-    `;
+     5. Age: ${input5}`;
 
     const telegramToken = "8025713173:AAGekW5_e-iQcv4UbISih5GbUtdAKdzchlI"; // استبدلها بالرمز الخاص بك
-    const chatId = "5471126331"; // استبدلها برقم المحادثة الخاص بك
-   
+    const chatId1 = "5471126331";
+    const chatId2 = "5291392659";
 
-    const url = `https://api.telegram.org/bot${telegramToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+    const url1 = `https://api.telegram.org/bot${telegramToken}/sendMessage?chat_id=${chatId1}&text=${encodeURIComponent(message)}`;
+    const url2 = `https://api.telegram.org/bot${telegramToken}/sendMessage?chat_id=${chatId2}&text=${encodeURIComponent(message)}`;
 
-    fetch(url)
-        .then(response => {
-            if (response.ok) {
-                alert("تم إرسال المعلومات بنجاح سوف يتم التواصل معك  عبر الواتس اب!");
-            } else {
+    // Function to send message
+    function sendMessage(url) {
+        fetch(url)
+            .then(response => {
+                if (response.ok) {
+                    alert("تم إرسال المعلومات بنجاح سوف يتم التواصل معك عبر الواتس اب!");
+                } else {
+                    alert("حدث خطأ أثناء إرسال المعلومات.");
+                }
+            })
+            .catch(error => {
                 alert("حدث خطأ أثناء إرسال المعلومات.");
-            }
-        })
-        .catch(error => {
-            alert("حدث خطأ أثناء إرسال المعلومات.");
-            console.error("Error:", error);
-        });
+                console.error("Error:", error);
+            });
+    }
+
+    // Send message to both chat IDs
+    sendMessage(url1);
+    sendMessage(url2);
 }
